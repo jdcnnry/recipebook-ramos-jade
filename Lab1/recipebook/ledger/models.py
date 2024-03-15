@@ -24,7 +24,7 @@ class Recipe(models.Model):
 
 
 class RecipeIngredient(models.Model):
-    qty = models.CharField(max_length=100)
+    quantity = models.CharField(max_length=100)
     ingredient = models.ForeignKey(
         'Ingredient',
         on_delete=models.CASCADE,
@@ -37,4 +37,4 @@ class RecipeIngredient(models.Model):
     )
 
     def __str__(self):
-        return '{} of {}' .format(self.qty, self.ingredient)
+        return '{} of {}' .format(self.quantity, self.ingredient)
